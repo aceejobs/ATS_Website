@@ -1,9 +1,9 @@
+import React from 'react'
 import Image from 'next/image';
-import React from 'react';
 
-const SixthContent = () => {
+const AboutHome = () => {
   return (
-    <div className='mt-40 px-6  lg:px-32' id='about'>
+    <div className="container py-12">
       <section className='hidden lg:block'>
         <div className='flex items-center justify-between'>
           <div className='relative h-[576px] w-[48%]'>
@@ -95,8 +95,9 @@ const SixthContent = () => {
           </p>
         </div>
       </section>
-    </div>
-  );
-};
 
-export default SixthContent;
+      </div>
+  )
+}
+
+export default AboutHome

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import '@/styles/globals.css';
 // !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
+import Layout from '@/components/layout/Layout';
 
 /**
  * !STARTERCONF info
@@ -13,12 +14,18 @@ import '@/styles/colors.css';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
+      {/* <Head>
         <link rel='shortcut icon' href='/assets/svg/logo.svg' />
-      </Head>
+      </Head> */}
+ <Layout>
+      
       <Component {...pageProps} />
+  </Layout>
+
     </>
   );
 }
 
 export default MyApp;
+
+

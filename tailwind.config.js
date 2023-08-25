@@ -9,6 +9,16 @@ module.exports = {
       fontFamily: {
         primary: ['Inter', ...fontFamily.sans],
       },
+      container: {
+        center: true,
+        padding: {
+          Default: "1rem",
+          sm: "2rem",
+          lg: "3rem",
+          xl: "4rem",
+          "2xl": "6rem",
+        }
+      },
       colors: {
         primary: {
           // Customize it on globals.css :root
@@ -66,6 +76,7 @@ module.exports = {
         shimmer: 'shimmer 1.3s linear infinite',
       },
     },
+    
   },
   plugins: [require('@tailwindcss/forms')],
 };

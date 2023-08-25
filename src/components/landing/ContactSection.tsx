@@ -10,12 +10,12 @@ const ContactSection = () => {
   const [message, setMessage] = useState('');
   return (
     <div
-      className='relative mt-32 items-center px-6 lg:-top-20 lg:flex lg:px-32 '
+      className='py-12 lg:py-20 items-center px-6 lg:-top-20 lg:flex lg:px-32 '
       id='contact'
     >
       <div className='lg:w-[49%]'>
         <div className='hidden lg:block'>
-          <p className='text-[16px]'>Contact Us</p>
+          {/* <p className='text-2xl font-bold'>Contact Us</p> */}
           <p className='my-2 font-[700] medium-phone:text-[20px] large-phone:text-[34px]'>
             Get In Touch With Us
           </p>

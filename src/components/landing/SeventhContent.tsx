@@ -32,7 +32,7 @@ const data = [
 const SeventhContent = () => {
   return (
     <div id='services'>
-      <div className='relative -top-[10rem] hidden h-[398px] w-full md:block'>
+      <div className='relative -top-[10rem] hidden h-[150px] w-full md:block'>
         <Image
           src='/assets/svg/line-small.svg'
           alt='hero image'

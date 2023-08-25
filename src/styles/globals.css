@@ -35,10 +35,11 @@
 body,
 html {
   font-family: 'DM Sans', sans-serif;
+
 }
 
 .open {
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
 }
 
 @layer base {
@@ -93,6 +94,11 @@ html {
   .min-h-main {
     @apply min-h-[calc(100vh-56px)];
   }
+  .my-input{
+    @apply block w-full rounded-lg border py-3 text-gray-900  px-3 placeholder-gray-400  border-[#CCCCCC] shadow-sm focus:outline-none focus:ring-ace-blue sm:text-sm focus:border-ace-blue
+  }
+  
+  
 }
 
 @layer utilities {
@@ -241,4 +247,7 @@ html {
   100% {
     transform: translateY(-400%);
   }
+}
+.container{
+  @apply px-3;
 }

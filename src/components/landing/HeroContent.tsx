@@ -20,25 +20,25 @@ const HeroContent = () => {
         <div className='hidden  items-center justify-between gap-10 lg:flex  '>
           <div className='open font-bold'>
             <p className='text-[48px] leading-[57px] text-ace-black'>
-              Get The Best Talents <br /> For The Role
+              Looking for your next role?<br /> We've got you covered
             </p>
-            <p className='text-[18px] font-light leading-[31px]'>
+            <p className='text-[18px] font-light leading-[31px] mt-6'>
               We are committed to being the bridge <br /> between you and your
               career goals.
             </p>
             <div className='mt-6 flex items-center gap-3'>
-              <div onClick={toggleModal}>
+              {/* <div onClick={toggleModal}>
                 <Button className='h-[52px] w-[150px] '> Hire Talent</Button>
-              </div>
-              <div onClick={toggleModal}>
+              </div> */}
+              <Link  href="/jobs">
                 <Button className='h-[52px] w-[150px] ' variant='outline'>
                   {' '}
                   Find a Job
                 </Button>
-              </div>
+              </Link>
             </div>
           </div>
-          <div className='relative  h-[746px] w-[779px]'>
+          <div className='relative  h-[646px] w-[779px]'>
             <motion.div
               animate={{ x: 60 }}
               initial={{ x: 0 }}
@@ -99,7 +99,7 @@ const HeroContent = () => {
                 ease: [0.6, 0.05, -0.01, 0.9],
               }}
               style={{
-                zIndex: '1000',
+                zIndex: '150',
               }}
               className='absolute top-[15rem] -right-[22rem] xl:top-[24rem] xl:right-[3rem]'
             >
@@ -118,7 +118,7 @@ const HeroContent = () => {
                 ease: [0.6, 0.05, -0.01, 0.9],
               }}
               style={{
-                zIndex: '10000',
+                zIndex: '250',
               }}
               className='absolute top-[20rem] -right-[10rem] xl:top-[24rem] xl:right-[3rem]'
             >
@@ -220,7 +220,7 @@ const HeroContent = () => {
                 ease: [0.6, 0.05, -0.01, 0.9],
               }}
               style={{
-                zIndex: '1000',
+                zIndex: '100',
               }}
               className='absolute top-[15rem] -right-28'
             >
@@ -239,7 +239,7 @@ const HeroContent = () => {
                 ease: [0.6, 0.05, -0.01, 0.9],
               }}
               style={{
-                zIndex: '10000',
+                zIndex: '250',
               }}
               className='absolute top-[20rem] right-[1rem]'
             >
