@@ -101,9 +101,9 @@ const CompanyValues = () => {
         {/* Image section */}
         <div className="mt-10 sm:mt-12">
         {/* <Image
-                src='/assets/svg/large-img.avif'
+                src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80'
                 alt='image-1'
-                width={"100"}
+                width={100}
                 height={286}
                 className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
               /> */}

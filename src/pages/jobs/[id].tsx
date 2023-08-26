@@ -4,6 +4,15 @@ import { jobs } from './jobs';
 import ContactSection from '@/components/landing/ContactSection';
 
 const JobDetailsPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phoneNumber: '',
+    coverLetter: '',
+    cv: null as File | null,
+  });
+
+
   const router = useRouter();
   const { jobId } = router.query; // Retrieve job ID from the URL query params
   const { id } = router.query; // Get the job ID from the URL query
@@ -13,15 +22,6 @@ const JobDetailsPage = () => {
   if (!job) {
     return <div>Job not found</div>;
   } 
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phoneNumber: '',
-    coverLetter: '',
-    cv: null as File | null,
-  });
-
 
 
 
@@ -85,14 +85,14 @@ const JobDetailsPage = () => {
             <p className="mb-4 text-gray-800">{job.description}</p>
             <p className='text-xl font-bold mb-1 mt-4'>Requirements</p>
          <ul className='list-disc pl-3'>   
-          {job.requirements.map(requirement => (
-              <li className='text-gray-800'>{requirement}</li>
+          {job.requirements.map((requirement,index) => (
+              <li className='text-gray-800' key={index}>{requirement}</li>
             ))}
             </ul>
             <p className='text-xl font-bold mb-1 mt-4'>Qualifications</p>
          <ul className='list-disc pl-3'>   
-          {job.qualifications.map(qualification => (
-              <li className='text-gray-800'>{qualification}</li>
+          {job.qualifications.map((qualification, index) => (
+              <li className='text-gray-800' key={index}>{qualification}</li>
             ))}
             </ul>
           </div>
