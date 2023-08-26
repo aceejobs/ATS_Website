@@ -1,7 +1,7 @@
 import ContactSection from '@/components/landing/ContactSection';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { jobs } from './jobs';
+import jobs from '../../components/jobData';
 
 const JobsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,22 +15,20 @@ const JobsPage = () => {
   const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-  const handlePageChange = (page:any) => {
+  const handlePageChange = (page: any) => {
     setCurrentPage(page);
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     // const newSearchTerm = e.target.value;
     // setSearchTerm(newSearchTerm);
-    // setCurrentPage(1); 
-    
+    // setCurrentPage(1);
     // Reset to the first page when searching
   };
 
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
   const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
-
 
   return (
     <div>
@@ -65,11 +63,11 @@ const JobsPage = () => {
             <h3 className='text-xl font-semibold'>{job.title}</h3>
             <p className='text-gray-600'>{job.company}</p>
             <p className='text-gray-600'>{job.location}</p>
-            <p className='mb-6 mt-2'>    
-            {job.description.length > 200 ?
-    `${job.description.substring(0, 75)}...` : job.description
-  }
-  </p>
+            <p className='mb-6 mt-2'>
+              {job.description.length > 200
+                ? `${job.description.substring(0, 75)}...`
+                : job.description}
+            </p>
             {/* <p className='mb-6 mt-2'>{job.description}</p> */}
             <Link
               href={`/jobs/${job.id}`}
@@ -123,5 +121,3 @@ const JobsPage = () => {
 };
 
 export default JobsPage;
-
-

@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { Link } from 'react-scroll';
 
 import Button from '@/components/buttons/Button';
 import Modal from '@/components/modal/Modal';
+import Link from 'next/link';
 
 const HeroContent = () => {
   const [showModal, setShowModal] = useState(false);
@@ -152,7 +152,7 @@ const HeroContent = () => {
           <div onClick={toggleModal}>
             <Button className='h-[52px] w-[150px] '>Get Started</Button>
           </div>
-          <Link to='contact' smooth={true} duration={1000}>
+          <Link href='/contact'>
             <Button className='h-[52px] w-[150px] ' variant='outline'>
               {' '}
               Contact us

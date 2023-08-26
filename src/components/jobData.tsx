@@ -1,4 +1,5 @@
-export const jobs = [
+import React from 'react';
+ const jobs = [
   {
     id: 1,
     title: 'Frontend Developer',
@@ -117,3 +118,6 @@ export const jobs = [
     qualifications: ['2+ years of UX/UI design experience', 'Experience with user testing and research', 'Creative thinking and problem-solving skills'],
   },
 ];
+
+export default jobs
+
