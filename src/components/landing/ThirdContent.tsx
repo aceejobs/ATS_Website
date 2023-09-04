@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-import { AiOutlineFileSearch } from "react-icons/Ai";
+import { AiOutlineFileSearch } from "react-icons/ai";
 import { TfiWrite } from "react-icons/tfi";
 import { PiWechatLogo } from "react-icons/pi";
 
