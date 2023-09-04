@@ -12,7 +12,7 @@ const NavBar = () => {
     setShowModal((prev) => !prev);
   };
   return (
-    <div>
+    <div className='bg-white py-3'>
       <div className=' flex items-center justify-between px-6 pt-4 lg:px-32'>
         <div className='relative    flex h-[59px] w-[116px] items-center justify-center '>
           <Image
@@ -36,11 +36,11 @@ const NavBar = () => {
           <Link to='services' smooth={true} duration={1000}>
             <p className='cursor-pointer text-[16px] font-[700]'> Services</p>
           </Link>
-          <div onClick={toggleModal}>
+          <Link to="blog">
             <Button className='h-[40px] w-[123px] rounded-[6px]'>
-              Get Started
+              Blog
             </Button>
-          </div>
+          </Link>
         </div>
       </div>
       {showModal && <Modal toggleModal={toggleModal} />}

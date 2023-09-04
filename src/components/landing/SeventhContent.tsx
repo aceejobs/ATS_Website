@@ -31,7 +31,7 @@ const data = [
 ];
 const SeventhContent = () => {
   return (
-    <div id='services'>
+    <div id='services' className='bg-[#F4F7FF] pt-32'>
       <div className='relative -top-[10rem] hidden h-[150px] w-full md:block'>
         <Image
           src='/assets/svg/line-small.svg'
@@ -42,23 +42,6 @@ const SeventhContent = () => {
       </div>
       <div className=' relative mt-32 lg:-top-[12rem] lg:mt-0'>
         <div className='flex flex-col items-center justify-center overflow-auto overflow-x-hidden '>
-          <motion.p
-            animate={{
-              x: '-100%',
-            }}
-            whileInView={{
-              x: 0,
-            }}
-            initial={{
-              x: '5%',
-            }}
-            transition={{
-              duration: 0.7,
-            }}
-            className='mb-4  text-[20px]'
-          >
-            What we Offer
-          </motion.p>
           <motion.p
             animate={{
               x: '100%',

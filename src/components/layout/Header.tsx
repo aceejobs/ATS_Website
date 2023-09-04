@@ -96,7 +96,7 @@
 //               <Link href='/'>
 //                 <p
 //                   onClick={toggleMobileMenu}
-//                   className={`cursor-pointer text-base font-semibold ${isLinkActive('/')}`}
+//                   className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/')}`}
 //                 >
 //                   Home
 //                 </p>
@@ -104,7 +104,7 @@
 //               <Link href='/about'>
 //                 <p
 //                   onClick={toggleMobileMenu}
-//                   className={`cursor-pointer text-base font-semibold ${isLinkActive('/about')}`}
+//                   className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/about')}`}
 //                 >
 //                   About Us
 //                 </p>
@@ -112,7 +112,7 @@
 //               <Link href='/jobs'>
 //                 <p
 //                   onClick={toggleMobileMenu}
-//                   className={`cursor-pointer text-base font-semibold ${isLinkActive('/jobs')}`}
+//                   className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/jobs')}`}
 //                 >
 //                   Jobs
 //                 </p>
@@ -120,7 +120,7 @@
 //               <Link href='/contact'>
 //                 <p
 //                   onClick={toggleMobileMenu}
-//                   className={`cursor-pointer text-base font-semibold ${isLinkActive('/contact')}`}
+//                   className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/contact')}`}
 //                 >
 //                   Contact Us
 //                 </p>
@@ -138,16 +138,16 @@
 //             {/* Desktop Menu */}
 //             <div className='hidden items-center justify-between gap-8 md:gap-10 text-ace-blue lg:flex '>
 //           <Link href='/'>
-//             <p className={`cursor-pointer text-base font-semibold ${isLinkActive('/')}`}>Home</p>
+//             <p className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/')}`}>Home</p>
 //           </Link>
 //           <Link href='/about'>
-//             <p className={`cursor-pointer text-base font-semibold ${isLinkActive('/about')}`}> About Us</p>
+//             <p className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/about')}`}> About Us</p>
 //           </Link>
 //           <Link href='/jobs'>
-//             <p className={`cursor-pointer text-base font-semibold ${isLinkActive('/jobs')}`}> Jobs</p>
+//             <p className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/jobs')}`}> Jobs</p>
 //           </Link>
 //           <Link href='/contact'>
-//             <p className={`cursor-pointer text-base font-semibold ${isLinkActive('/contact')}`}> Contact Us</p>
+//             <p className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/contact')}`}> Contact Us</p>
 //           </Link>
 //         </div>
 //         <Link href='/jobs' className='hidden md:block'>
@@ -194,7 +194,7 @@ const NavBar = () => {
   // Define a function to determine if a link is active
   const isLinkActive = (href: string) => {
     return router.pathname === href
-      ? 'text-gray-900 bg-[#F4F7FF] rounded-lg py-2 px-4 text-base font-bold'
+      ? 'border-b-2 rounded-none border-[#0017b7] rounded-lg py-2 px-4 text-base font-bold'
       : '';
   };
 
@@ -219,7 +219,7 @@ const NavBar = () => {
       <div
         className={`${
           isScrolled ? 'fixed top-0 left-0 right-0 bg-white shadow' : ''
-        } ${showMobileMenu ? 'pt-0' : 'pt-4'} flex items-center justify-between px-6 lg:px-32 text-sm transition-all duration-300 z-[1000]`}
+        } ${showMobileMenu ? 'pt-0' : 'pt-4'} flex items-center justify-between px-6 lg:px-32 text-sm transition-all duration-300 z-[1000] py-2 bg-white`}
       >
         <Link href='/'>
           <div className='relative flex h-[59px] w-[116px] items-center justify-center '>
@@ -266,7 +266,7 @@ const NavBar = () => {
               <Link href='/'>
                 <p
                   onClick={toggleMobileMenu}
-                  className={`cursor-pointer text-base font-semibold ${isLinkActive(
+                  className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive(
                     '/'
                   )}`}
                 >
@@ -276,7 +276,7 @@ const NavBar = () => {
               <Link href='/about'>
                 <p
                   onClick={toggleMobileMenu}
-                  className={`cursor-pointer text-base font-semibold ${isLinkActive(
+                  className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive(
                     '/about'
                   )}`}
                 >
@@ -286,7 +286,7 @@ const NavBar = () => {
               <Link href='/jobs'>
                 <p
                   onClick={toggleMobileMenu}
-                  className={`cursor-pointer text-base font-semibold ${isLinkActive(
+                  className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive(
                     '/jobs'
                   )}`}
                 >
@@ -296,16 +296,16 @@ const NavBar = () => {
               <Link href='/contact'>
                 <p
                   onClick={toggleMobileMenu}
-                  className={`cursor-pointer text-base font-semibold ${isLinkActive(
+                  className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive(
                     '/contact'
                   )}`}
                 >
                   Contact Us
                 </p>
               </Link>
-              <Link href='/jobs'>
+              <Link href='/blog'>
                 <Button className='h-[40px] w-[123px] rounded-[6px]'>
-                  Get Started
+                  Blog
                 </Button>
               </Link>
             </div>
@@ -316,21 +316,21 @@ const NavBar = () => {
         {/* Desktop Menu */}
         <div className='hidden items-center justify-between gap-8 md:gap-10 text-ace-blue lg:flex '>
           <Link href='/'>
-            <p className={`cursor-pointer text-base font-semibold ${isLinkActive('/')}`}>Home</p>
+            <p className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/')}`}>Home</p>
           </Link>
           <Link href='/about'>
-            <p className={`cursor-pointer text-base font-semibold ${isLinkActive('/about')}`}> About Us</p>
+            <p className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/about')}`}> About Us</p>
           </Link>
           <Link href='/jobs'>
-            <p className={`cursor-pointer text-base font-semibold ${isLinkActive('/jobs')}`}> Jobs</p>
+            <p className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/jobs')}`}> Jobs</p>
           </Link>
           <Link href='/contact'>
-            <p className={`cursor-pointer text-base font-semibold ${isLinkActive('/contact')}`}> Contact Us</p>
+            <p className={`cursor-pointer text-base font-semibold text-[#231459] ${isLinkActive('/contact')}`}> Contact Us</p>
           </Link>
         </div>
-        <Link href='/jobs' className='hidden md:block'>
+        <Link href='/blog' className='hidden md:block'>
           <Button className='h-[40px] w-[123px] rounded-[6px]'>
-            Get Started
+            Blog
           </Button>
         </Link>
       </div>
