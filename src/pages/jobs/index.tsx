@@ -33,7 +33,7 @@ const JobsPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className='bg-[#F4F7FF] py-16 md:py-20'>
+      <section className='bg-[#F4F7FF] py-16 md:py-24'>
         <div className='container mx-auto text-center'>
           <h1 className='mb-2 text-4xl font-bold'>Find Your Dream Job</h1>
           <p className='text-lg'>
@@ -60,6 +60,7 @@ const JobsPage = () => {
             key={job.id}
             className='rounded-lg bg-[#F4F7FF] p-4 shadow-md transition duration-300 hover:shadow-lg md:p-6'
           >
+            <div className="md:h-[75%]">
             <h3 className='text-xl font-semibold'>{job.title}</h3>
             <p className='text-gray-600'>{job.company}</p>
             <p className='text-gray-600'>{job.location}</p>
@@ -68,6 +69,8 @@ const JobsPage = () => {
                 ? `${job.description.substring(0, 75)}...`
                 : job.description}
             </p>
+            </div>
+            
             {/* <p className='mb-6 mt-2'>{job.description}</p> */}
             <Link
               href={`/jobs/${job.id}`}

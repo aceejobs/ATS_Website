@@ -5,64 +5,52 @@ const values = [
   {
     name: 'Integrity',
     description:
-      ' We are committed to acting with honesty, transparency, and ethical behaviour in all our interactions with job seekers and employers.',
+      ' Integrity is our steadfast companion. We pledge to journey forward with unwavering honesty, an unclouded transparency, and a moral compass guiding every interaction with job seekers and employers.',
   },
   {
     name: 'Excellence',
     description:
-      `We strive to deliver the highest quality recruitment solutions
-      that exceed expectations and help job seekers and employers
-      achieve their goals.`,
+      `Our quest is one of relentless excellence, where we sculpt recruitment solutions that not only meet but surpass expectations. With every endeavor, we're artisans of achievement, crafting pathways for job seekers and employers to ascend their goals' summits.`,
   },
   {
     name: 'Collaboration',
     description:
-      ` We believe that working together as a team with our clients and
-      partners is essential to achieving success.`,
+      ` We hold the belief that success is a symphony composed through collaborative efforts. Like skilled conductors, we orchestrate teamwork with our clients and partners, recognizing that it's the harmonious blend of talents that sets the stage for achievement.`,
   },
   {
     name: 'Innovation',
     description:
-      `We are constantly seeking new and better ways to improve our
-      recruitment services and stay ahead of industry trends. `,
+      `Our spirit thrives on innovation, an unwavering drive to explore uncharted territories and redefine the limits of recruitment. Like pioneers of progress, we venture into the unknown, seeking to sculpt superior versions of our services and ride the crest of industry trends. `,
   },
   {
     name: 'Professionalism',
     description:
-      `We conduct ourselves with the highest level of professionalism,
-      accountability, and responsibility, and always strive to uphold
-      the reputation of our industry.`,
+      `Our standard is one of impeccable professionalism, where accountability and responsibility are our unwavering companions. We stand as sentinels of our industry's reputation, ensuring that every step we take upholds the dignity it deserves.`,
   },
   {
     name: 'Personalised service ',
     description:
-      `We believe in treating each job seeker and employer as
-      an individual with unique needs and preferences, and providing
-      tailored recruitment solutions accordingly.`,
+      `We champion the art of personalization, recognizing the distinct essence within every job seeker and employer. With each interaction, we craft custom-tailored recruitment solutions, a testament to our belief in celebrating individuality and catering to unique aspirations and preferences.`,
   },
 ]
 const CompanyValues = () => {
   return (
-    <div className='bg-[#F4F7FF] py-8'>
+    <>
+    <div className='bg-[#FFF] py-8'>
       {/* Content section */}
       <div className="container">
           <div className=" md:py-6 py-6 mt-8">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Vision</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our North Star</h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="">
                 <p className="lg:text-lg text-lg leading-8 text-gray-600">
-                Our vision is to be the most trusted and respected recruitment
-              company in the industry, known for our commitment to excellence,
-              integrity, and personalized service. We aim to be the go-to
-              resource for job seekers and employers alike, helping them achieve
-              their goals and drive their businesses forward.
+                At ACEE RECRUITMENT, we embark on a journey to unlock the boundless potential of skilled individuals. We forge connections with visionary employers who recognize and honor their talents. 
+
                 </p>
                 <div className="mt-10 lg:text-lg text-lg leading-7 text-gray-600">
                   <p>
-                  Through innovation, collaboration, and a relentless focus on
-              customer satisfaction, we will continue to lead the way in the
-              recruitment industry and make a positive impact on the lives ofthe
-              people we serve.
+                  Our dedication lies in crafting tailor-made recruitment marvels that cater to the distinctive desires of every job seeker and employer we embrace. Moreover, our commitment extends to delivering unparalleled customer experiences that transcend the ordinary.
+
                   </p>
                   
                 </div>
@@ -114,10 +102,16 @@ const CompanyValues = () => {
           />
         </div>
 
-        {/* Values section */}
-        <div className="mx-auto mt-10 py-6">
-          <div className="mx-auto max-w-2xl lg:mx-0 mb-8">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our values</h2>
+        
+
+        </div>
+
+    </div>
+    {/* Values section */}
+    <div className="mt-10 py-6 bg-[#F4F7FF] md:py-16 ">
+      <div className="container">
+      <div className="mx-auto max-w-2xl lg:mx-0 mb-8">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Ethos</h2>
             
           </div>
           <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -128,11 +122,10 @@ const CompanyValues = () => {
               </div>
             ))}
           </dl>
+      </div>
+         
         </div>
-
-        </div>
-
-    </div>
+      </>
   )
 }
 

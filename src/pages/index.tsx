@@ -7,6 +7,7 @@ import SecondContent from '@/components/landing/SecondContent';
 import SeventhContent from '@/components/landing/SeventhContent';
 import ThirdContent from '@/components/landing/ThirdContent';
 import NavBar from '@/components/navBar/NavBar';
+import FeaturedJob from '@/components/landing/FeaturedJob';
 
 const Home = () => {
   return (
@@ -15,7 +16,9 @@ const Home = () => {
       <SecondContent />
       <ThirdContent />
       <SeventhContent />
+      <FeaturedJob/>
       <ContactSection />
+      
     </>
   );
 };
