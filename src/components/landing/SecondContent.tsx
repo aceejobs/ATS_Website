@@ -15,10 +15,10 @@ const SecondContent = () => {
       <div className='w-screen lg:block'>
         <div className=' bg-[#Fff] py-8'>
           <div className='container'>
-            <div className='flex items-center justify-between gap-6 md:gap-12'>
-              <div className='md:w-[60%] w-[100%]'>
+            <div className='md:flex items-center justify-between gap-6 md:gap-12'>
+              <div className='md:w-[60%] w-[100%] mb-4 md:mb-0'>
                 <div data-aos='fade-up-right'>
-                  <div className='object-contain md:min-h-[60vh] h-[20vh]'>
+                  <div className='object-contain md:min-h-[60vh] h-[30vh]'>
                     <Image
                       src='/assets/svg/why.jpeg'
                       alt=''

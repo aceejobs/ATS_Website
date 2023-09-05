@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       offset: 200, // Offset (in pixels) after the element appears
     });
   }, []);
+  
   const AnyComponent = Component as any;
   return (
     <Layout>

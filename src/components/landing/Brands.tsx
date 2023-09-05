@@ -5,10 +5,10 @@ const Brands = () => {
   return (
     <div className="container pt-8">
     <div className="md:flex items-center gap-6">
-      <div className="w-1/3">
+      <div className="md:w-1/3">
         <p className="text-2xl font-bold">We are trusted by our happy clients</p>
       </div>
-      <div className="w-2/3">
+      <div className="md:w-2/3">
       <div className="grid grid-cols-3 gap-4">
          <div>
          <Image

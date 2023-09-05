@@ -17,8 +17,22 @@ const ThirdContent = () => {
     <div className='mb-16 w-screen lg:block'>
       <div className=' bg-[#Fff] py-8'>
         <div className='container'>
-          <div className='flex items-center justify-between gap-6 md:gap-12'>
-            <div className='h-full w-[100%] md:w-[40%]'>
+          <div className='md:flex items-center justify-between gap-6 md:gap-12'>
+           
+          <div className='md:hidden w-[100%] md:w-[60%] order-first'>
+              <div data-aos='fade-up-right'>
+                <div className='h-[30vh] object-contain md:min-h-[60vh] mb-4'>
+                  <Image
+                    src='/assets/svg/how.jpeg'
+                    alt=''
+                    layout='fill'
+                    objectFit='contain'
+                  />
+                </div>
+              </div>
+            </div>
+           
+            <div className='h-full w-[100%] md:w-[40%] order-last md:order-first'>
               <p
                 className='mb-6 text-3xl font-bold'
                 data-aos='fade-left'
@@ -84,7 +98,7 @@ const ThirdContent = () => {
               </div>
             </div>
 
-            <div className='w-[100%] md:w-[60%]'>
+            <div className='hidden md:block w-[100%] md:w-[60%] order-first'>
               <div data-aos='fade-up-right'>
                 <div className='h-[20vh] object-contain md:min-h-[60vh]'>
                   <Image

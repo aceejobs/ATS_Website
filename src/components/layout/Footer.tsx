@@ -1,39 +1,67 @@
 import Image from 'next/image';
 import React from 'react';
-import { animateScroll as scroll, Link } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <div className='relative  mt-20 w-full bg-ace-light-blue px-6 py-10 lg:mt-0  lg:px-32'>
-      <div className='flex justify-between gap-4 lg:items-center'>
-        <div className='relative  flex h-[43px]  w-[83px] items-center justify-center lg:h-[59px] lg:w-[116px] '>
-          <Image
-            src='/assets/svg/logo.svg'
-            alt='logo'
-            fill={true}
-            className='object-contain '
-          />
-        </div>
-        <div>
-          <p className='mb-6 font-bold text-ace-blue'>Navigations</p>
-          <div className='flex flex-col gap-3 text-ace-blue md:gap-6 lg:flex-row'>
-            <p onClick={() => scroll.scrollToTop()} className='cursor-pointer'>
-              Home
-            </p>
-            <Link to='services' smooth={true} duration={1000}>
-              <p className='cursor-pointer'>Services</p>
-            </Link>
-            <Link to='about' smooth={true} duration={1000}>
-              <p className='cursor-pointer'>About</p>
-            </Link>
-            <Link to='contact' smooth={true} duration={1000}>
-              <p className='cursor-pointer'>Contact Us</p>
-            </Link>
+    <div className='mt-20 bg-[#F4F7FF]'>
+      <div className='container py-8'>
+        <div className='grid grid-cols-4 gap-4'>
+          <div>
+            <Image
+              src='/assets/svg/logo.svg'
+              alt='logo'
+              width={200}
+              height={200}
+              className='object-contain '
+            />
+          </div>
+          <div>
+            <p className='mb-4 text-lg font-semibold'>Navigation</p>
+            <ul className='text-gray-500'>
+              <li className='mb-2'>
+                <Link href='/'>Home</Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/jobs'>Job List</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className='mb-4 text-lg font-semibold'>Company</p>
+            <ul className='text-gray-500'>
+              <li className='mb-2'>
+                <Link href='/about'>About Us</Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/contact'>Contact</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className='mb-4 text-lg font-semibold'>Contact</p>
+            <ul className='text-gray-500'>
+              <li className='mb-2'>
+                <a href='tel:+2348165821749'>+2348165821749</a>
+              </li>
+              <li className='mb-2'>
+                <a href='mailto:info@aceejobs.com'>info@aceejobs.com</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div>
-          <p className='mb-6 font-bold text-ace-blue'>Social Links</p>
-          <div className='flex  gap-2 text-ace-blue lg:gap-6'>
+      </div>
+        <hr />
+        <div className='container py-8'>
+          <div className="md:flex justify-between">
+            <div className='md:w-3/5'>
+              <div className="md:flex">
+                <p className='text-xl font-semibold'>Find your next great opportunity!</p>
+              </div>
+            </div>
+            <div>
+          <div className='flex  gap-2 lg:gap-6'>
             <a
               href=' https://www.linkedin.com/company/acee-recruitment/'
               target='_blank'
@@ -71,12 +99,13 @@ const Footer = () => {
               />
             </a>
           </div>
+            </div>
+
+          </div>
+        <div>
+          
         </div>
       </div>
-      <hr className='my-10 border border-[#4963fb]' />
-      <p className='text-center text-ace-blue'>
-        &#169; Acee Workforce Solutions
-      </p>
     </div>
   );
 };
