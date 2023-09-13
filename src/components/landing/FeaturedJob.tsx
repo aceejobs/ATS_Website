@@ -7,7 +7,7 @@ const FeaturedJob = () => {
 
   const filterJob = jobs.slice(0,8)
   return (
-    <div className='bg-[#0017b7]'>
+    <div className='bg-[#F15D55]'>
       <div className="container py-12 md:py-20">
         <div className="flex justify-between items-center">
           <p className="text-2xl font-semibold text-white">Featured Jobs</p>
@@ -16,9 +16,12 @@ const FeaturedJob = () => {
         <div className='grid md:grid-cols-4 grid-cols-2 gap-4 mt-8'>
         {filterJob.map((job: any) => (
           <div
-            key={job.id}
-            className='rounded-xl bg-[#FFFFFF0F] p-2 shadow-md transition duration-300 hover:shadow-lg md:p-6 text-white'
-          >
+          key={job.id}
+          className='rounded-xl bg-[#FFFFFF0F] p-2 shadow-md transition duration-300 hover:shadow-xl md:p-6 text-white hover:border'
+          data-aos={job.id % 2 === 0 ? 'fade-left' : 'fade-right'}
+          data-aos-duration="1000" // Set animation duration (in milliseconds)
+          data-aos-delay="200" // Set animation delay (in milliseconds)
+        >
             <Image
               src='/assets/svg/phon.jpg'
               alt='logo'

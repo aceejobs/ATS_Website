@@ -40,7 +40,7 @@ const ThirdContent = () => {
               >
                 How we work
               </p>
-              <div className='mb-8'>
+              <div className='mb-8' data-aos='fade-up-right'>
                 <div className='flex items-center gap-4'>
                   <div className='shadow h-[3rem] w-[3rem] font-light flex items-center justify-center relative rounded-[5px] bg-[#F4F7FF] text-[#0017b7]'>
                   <AiOutlineFileSearch  className='text-xl font-semibold'/>
@@ -59,7 +59,7 @@ const ThirdContent = () => {
                   numquam.
                 </p>
               </div>
-              <div className='mb-8'>
+              <div className='mb-8' data-aos='fade-left'>
               <div className='flex items-center gap-4'>
                   <div className='shadow h-[3rem] w-[3rem] font-light flex items-center justify-center relative rounded-[5px] bg-[#F4F7FF] text-[#0017b7]'>
                   <TfiWrite />
@@ -78,7 +78,7 @@ const ThirdContent = () => {
                   Corporis in praesentium asperiores cumque ea voluptates!
                 </p>
               </div>
-              <div className='mb-8'>
+              <div className='mb-8' data-aos='fade-down-right'>
               <div className='flex items-center gap-4'>
                   <div className='shadow h-[3rem] w-[3rem] font-light flex items-center justify-center relative rounded-[5px] bg-[#F4F7FF] text-[#0017b7]'>
                   <PiWechatLogo  className='text-xl'/>

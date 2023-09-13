@@ -18,10 +18,35 @@ const Footer = () => {
     setEmail('');
   };
   return (
-    <div className='mt-20 bg-[#F4F7FF] py-8 md:py-12'>
+    <>
+    <div className="bg-white py-8 md:py-12 mt-20">
+      <div className="container text-center md:w-1/2 mx-auto">
+        <p className="text-3xl font-semibold mb-4">Subscribe Newsletter</p>
+        <div className="">
+                <p className='text-xl mb-2 text-gray-500'>Find your next great opportunity!</p>
+
+                <div className="flex bg-white items-center border p-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300 rounded-lg">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full p-3 border-none"
+                  value={email}
+                  onChange={handleEmailChange}
+                />
+                <button
+                  onClick={handleSubscribe}
+                  className="px-6 py-3 bg-[#0017b7] text-white rounded-r-md hover:bg-blue-600 focus:outline-none"
+                >
+                  Subscribe
+                </button>
+              </div>
+              </div>
+      </div>
+    </div>
+    <div className='bg-[#F4F7FF] py-8 md:py-12'>
       <div className='container pb-12'>
-        <div className='grid md:grid-cols-4 grid-cols-2 gap-4'>
-          <div>
+        <div className='md:flex gap-8'>
+          <div className='md:w-[35%]'>
             <Image
               src='/assets/svg/logo.svg'
               alt='logo'
@@ -29,68 +54,9 @@ const Footer = () => {
               height={150}
               className='object-contain '
             />
-          </div>
-          <div>
-            <p className='mb-2 text-lg font-semibold'>Navigation</p>
-            <ul className='text-gray-500'>
-              <li className='mb-1'>
-                <Link href='/'>Home</Link>
-              </li>
-              <li className='mb-1'>
-                <Link href='/jobs'>Job List</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className='mb-2 text-lg font-semibold'>Company</p>
-            <ul className='text-gray-500'>
-              <li className='mb-1'>
-                <Link href='/about'>About Us</Link>
-              </li>
-              <li className='mb-1'>
-                <Link href='/contact'>Contact</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className='mb-2 text-lg font-semibold'>Contact</p>
-            <ul className='text-gray-500'>
-              <li className='mb-1'>
-                <a href='tel:+2348165821749'>+2348165821749</a>
-              </li>
-              <li className='mb-1'>
-                <a href='mailto:info@aceejobs.com'>info@aceejobs.com</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-        <hr />
-        <div className='container pt-12'>
-          <div className="md:flex justify-between items-center">
-            <div className='md:w-3/5 py-2'>
-              <div className="md:flex">
-                <p className='text-xl font-semibold md:w-2/5'>Find your next great opportunity!</p>
+            <p className='text-lg font-medium'>Where talent meet opportunity</p>
 
-                <div className="flex bg-white items-center border p-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300 rounded-lg md:w-3/5">
-      <input
-        type="email"
-        placeholder="Enter your email"
-        className="w-full p-3 border-none"
-        value={email}
-        onChange={handleEmailChange}
-      />
-      <button
-        onClick={handleSubscribe}
-        className="px-6 py-3 bg-[#0017b7] text-white rounded-r-md hover:bg-blue-600 focus:outline-none"
-      >
-        Subscribe
-      </button>
-    </div>
-              </div>
-            </div>
-            <div>
-          <div className='flex  gap-2 lg:gap-6'>
+            <div className='flex  gap-2 lg:gap-6 mt-8'>
             <a
               href=' https://www.linkedin.com/company/acee-recruitment/'
               target='_blank'
@@ -128,14 +94,56 @@ const Footer = () => {
               />
             </a>
           </div>
-            </div>
-
           </div>
-        <div>
+          <div className="md:w-[65%]">
+            <div className="grid grid-cols-3">
+            <div>
+            <p className='mb-2 text-lg font-semibold'>Quick Links</p>
+            <ul className='text-gray-500'>
+              <li className='mb-1'>
+                <Link href='/'>Home</Link>
+              </li>
+              <li className='mb-1'>
+                <Link href='/blog'>Blog</Link>
+              </li>
+              <li className='mb-1'>
+                <Link href='/jobs'>Job List</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className='mb-2 text-lg font-semibold'>Company</p>
+            <ul className='text-gray-500'>
+              <li className='mb-1'>
+                <Link href='/about'>About Us</Link>
+              </li>
+              <li className='mb-1'>
+                <Link href='/contact'>Contact</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className='mb-2 text-lg font-semibold'>Contact</p>
+            <ul className='text-gray-500'>
+              <li className='mb-1'>
+                <a href='tel:+2348165821749'>+2348165821749</a>
+              </li>
+              <li className='mb-1'>
+                <a href='mailto:info@aceejobs.com'>info@aceejobs.com</a>
+              </li>
+              <li className='mb-1'>
+                <a href='mailto:careers@aceejobs.com'>careers@aceejobs.com</a>
+              </li>
+            </ul>
+          </div>
+            </div>
+          </div>
           
         </div>
       </div>
+
     </div>
+    </>
   );
 };
 

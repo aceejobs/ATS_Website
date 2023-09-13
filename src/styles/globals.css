@@ -258,7 +258,15 @@ html {
 .image-container {
   position: relative;
   width: 100%;
-  height: 100%; /* Set the desired height, adjust as needed */
-  max-width: 100%; /* Ensure the container does not exceed the viewport width */
+  height: 100%; 
+  max-width: 100%; 
   overflow: hidden;
+}
+
+.carousel .slide img{
+  width: 48px!important;
+}
+
+.carousel .control-dots .dot {
+  background-color: red!important; 
 }

@@ -4,7 +4,7 @@ import { animateScroll as scroll, Link } from 'react-scroll';
 
 const Footer = () => {
   return (
-    <div className='relative  mt-20 w-full bg-ace-light-blue px-6 py-10 lg:mt-0  lg:px-32'>
+    <div className='relative  mt-20 w-full bg-[#F15D55] px-6 py-10 lg:mt-0  lg:px-32'>
       <div className='flex justify-between gap-4 lg:items-center'>
         <div className='relative  flex h-[43px]  w-[83px] items-center justify-center lg:h-[59px] lg:w-[116px] '>
           <Image

@@ -10,7 +10,6 @@ const index = () => {
       
     <AboutHome/>
     <CompanyValues/>
-    <ContactSection/>
     </div>
 
   );

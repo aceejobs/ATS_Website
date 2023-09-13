@@ -10,30 +10,31 @@ const Brands = () => {
       </div>
       <div className="md:w-2/3">
       <div className="grid grid-cols-3 gap-4">
-         <div>
+      <div>
          <Image
-          src='/assets/svg/landmark.png'
+          src='/assets/svg/A.svg'
           alt='image-1'
-          width={150}
-          height={150}
+          width={200}
+          height={100}
 
         />
          </div>
          <div>
          <Image
-          src='/assets/svg/landmark.png'
+          src='/assets/svg/landmark.svg'
           alt='image-1'
-          width={150}
-          height={150}
+          width={200}
+          height={100}
 
         />
          </div>
+         
          <div>
          <Image
-          src='/assets/svg/landmark.png'
+          src='/assets/svg/12.svg'
           alt='image-1'
-          width={150}
-          height={150}
+          width={200}
+          height={100}
 
         />
          </div>

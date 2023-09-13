@@ -40,13 +40,17 @@ const HeroContent = () => {
               </Link>
             </div>
           </div>
-          <div className='relative  h-[646px] w-[779px]'>
-          <div className="image-container">
+          <div className='relative  h-[506px] w-[779px]'>
+          <div data-aos='zoom-in-up'>
+          <div className="image-container md:mt-8">
           <Image
-                src='/assets/svg/home-img.svg'
+                src='/assets/svg/home.svg'
                 alt='image-1'
-                layout='fill'
+                // layout='contain'
+                width={780}
+                height={600}
               />
+          </div>
           </div>
         </div>
       </div>

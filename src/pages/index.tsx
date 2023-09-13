@@ -8,6 +8,7 @@ import SeventhContent from '@/components/landing/SeventhContent';
 import ThirdContent from '@/components/landing/ThirdContent';
 import NavBar from '@/components/navBar/NavBar';
 import FeaturedJob from '@/components/landing/FeaturedJob';
+import Testimonial from '@/components/landing/Testimonial';
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
       <ThirdContent />
       <SeventhContent />
       <FeaturedJob/>
-      <ContactSection />
+      <Testimonial/>
       
     </>
   );

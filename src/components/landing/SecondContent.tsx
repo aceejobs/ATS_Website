@@ -30,7 +30,7 @@ const SecondContent = () => {
               </div>
               <div className='h-full w-[100%] md:w-[40%]'>
                 <p className='mb-6 text-3xl font-bold' data-aos='fade-left' data-delay="200">Why Choose Acee</p>
-                <div className='mb-5'>
+                <div className='mb-5' data-aos='fade-up-right'>
                   <p
                     className=' font-semibold lg:text-xl xl:text-xl'
                   
@@ -53,7 +53,7 @@ const SecondContent = () => {
                   Within our talent reservoir lies a diverse range of candidates, each armed with unique skill sets. Ready to drive your company's vision and aspirations to new horizons.
                   </p>
                 </div>
-                <div className='mb-5'>
+                <div className='mb-5' data-aos='fade-down-left'>
                   <p
                     className=' font-semibold lg:text-xl xl:text-xl'
                   

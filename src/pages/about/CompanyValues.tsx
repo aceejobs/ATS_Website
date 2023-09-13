@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-
+import groupImg from "../../../public/assets/svg/group1.jpeg"
 const values = [
   {
     name: 'Integrity',
@@ -40,7 +40,9 @@ const CompanyValues = () => {
       {/* Content section */}
       <div className="container">
           <div className=" md:py-6 py-6 mt-8">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our North Star</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+           data-aos='fade-right'
+            >Our North Star</h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="">
                 <p className="lg:text-lg text-lg leading-8 text-gray-600">
@@ -60,7 +62,10 @@ const CompanyValues = () => {
           </div>
 
           <div className=" md:py-6 py-6 mt-8">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Mission</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+           data-aos='fade-left'
+          
+            >Our Mission</h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="">
                 <p className="lg:text-lg text-lg leading-8 text-gray-600">
@@ -95,11 +100,16 @@ const CompanyValues = () => {
                 height={286}
                 className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
               /> */}
-          <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-            alt=""
+          
+          <Image
+                src='/assets/svg/group1.jpeg'
+                alt='image-1'
+                // layout='contain'
+                width={780}
+                height={600}
             className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
-          />
+
+              />
         </div>
 
         
@@ -111,12 +121,15 @@ const CompanyValues = () => {
     <div className="mt-10 py-6 bg-[#F4F7FF] md:py-16 ">
       <div className="container">
       <div className="mx-auto max-w-2xl lg:mx-0 mb-8">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Ethos</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+           data-aos='fade-down'
+    
+            >Our Ethos</h2>
             
           </div>
           <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {values.map((value) => (
-              <div key={value.name}>
+            {values.map((value, index) => (
+              <div key={value.name}  data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}>
                 <dt className="font-semibold text-lg text-gray-900">{value.name}</dt>
                 <dd className="mt-1 text-gray-600">{value.description}</dd>
               </div>
