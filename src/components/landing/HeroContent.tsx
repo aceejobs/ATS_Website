@@ -79,7 +79,7 @@ const HeroContent = () => {
         <div className='relative  h-[488px]  w-full overflow-y-auto overflow-x-hidden bg-patternMobile bg-no-repeat'>
         <div className="image-container">
           <Image
-                src='/assets/svg/home-img.svg'
+                src='/assets/svg/home.svg'
                 alt='image-1'
                 layout='fill'
               />

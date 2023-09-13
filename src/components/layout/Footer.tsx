@@ -19,11 +19,11 @@ const Footer = () => {
   };
   return (
     <>
-    <div className="bg-white py-8 md:py-12 mt-20">
+    <div className="bg-white py-8 md:py-12 mt-10">
       <div className="container text-center md:w-1/2 mx-auto">
-        <p className="text-3xl font-semibold mb-4">Subscribe Newsletter</p>
+        <p className="text-3xl font-semibold mb-6">Subscribe Newsletter</p>
         <div className="">
-                <p className='text-xl mb-2 text-gray-500'>Find your next great opportunity!</p>
+                <p className='text-xl mb-3 text-gray-500'>Find your next great opportunity!</p>
 
                 <div className="flex bg-white items-center border p-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300 rounded-lg">
                 <input
@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
           </div>
           <div className="md:w-[65%]">
-            <div className="grid grid-cols-3">
+            <div className="grid md:grid-cols-3 grid-cols-2 gap-6">
             <div>
             <p className='mb-2 text-lg font-semibold'>Quick Links</p>
             <ul className='text-gray-500'>
@@ -133,6 +133,9 @@ const Footer = () => {
               </li>
               <li className='mb-1'>
                 <a href='mailto:careers@aceejobs.com'>careers@aceejobs.com</a>
+              </li>
+              <li className='mb-1'>
+                <span className='text-gray-600 text-sm'>Mulliner Towers, 39 Alfred Rewane Road Lagos 101233.</span>
               </li>
             </ul>
           </div>
