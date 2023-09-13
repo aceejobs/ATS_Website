@@ -46,7 +46,7 @@ const Footer = () => {
     <div className='bg-[#F4F7FF] py-8 md:py-12'>
       <div className='container pb-12'>
         <div className='md:flex gap-8'>
-          <div className='md:w-[35%]'>
+          <div className='md:w-[35%] mb-3'>
             <Image
               src='/assets/svg/logo.svg'
               alt='logo'
@@ -56,7 +56,7 @@ const Footer = () => {
             />
             <p className='text-lg font-medium'>Where talent meet opportunity</p>
 
-            <div className='flex  gap-2 lg:gap-6 mt-8'>
+            <div className='flex  gap-2 lg:gap-6 mt-4'>
             <a
               href=' https://www.linkedin.com/company/acee-recruitment/'
               target='_blank'
@@ -131,11 +131,12 @@ const Footer = () => {
               <li className='mb-1'>
                 <a href='mailto:info@aceejobs.com'>info@aceejobs.com</a>
               </li>
-              <li className='mb-1'>
+              <li className='mb-2'>
                 <a href='mailto:careers@aceejobs.com'>careers@aceejobs.com</a>
               </li>
               <li className='mb-1'>
-                <span className='text-gray-600 text-sm'>Mulliner Towers, 39 Alfred Rewane Road Lagos 101233.</span>
+                
+                <span className='text-gray-600 text-[15px]'>Mulliner Towers, 39 Alfred Rewane Road Lagos 101233.</span>
               </li>
             </ul>
           </div>

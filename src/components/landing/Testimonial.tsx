@@ -37,6 +37,7 @@ const testimonials = [
 const Testimonial = () => {
   return (
     <div className="bg-[#F4F7FF] py-8 md:py-12">
+      <div className="container">
     <p className="text-2xl font-semibold mb-6 mt-2 text-center">Testimonials</p>
 
     <Carousel showThumbs={false}>
@@ -55,7 +56,7 @@ const Testimonial = () => {
               ))}
               
             </div>
-            <blockquote className="mt-6 md:text-xl leading-8 tracking-tight text-gray-600 text-2xl sm:leading-9">
+            <blockquote className="mt-6 md:text-xl text-lg leading-8 tracking-tight text-gray-600  sm:leading-9">
               <p>{testimonial.quote}</p>
             </blockquote>
           </div>
@@ -73,6 +74,7 @@ const Testimonial = () => {
         </div>
       ))}
     </Carousel>
+  </div>
   </div>
   );
 };

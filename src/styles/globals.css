@@ -270,3 +270,14 @@ html {
 .carousel .control-dots .dot {
   background-color: red!important; 
 }
+@media (min-width: 375px){
+  .container {
+      padding: 1rem;
+  }
+  }
+  
+  @media (max-width: 768px) {
+    #__next{
+      overflow-x: hidden
+    }
+  }

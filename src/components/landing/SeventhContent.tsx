@@ -31,7 +31,7 @@ const data = [
 ];
 const SeventhContent = () => {
   return (
-    <div id='services' className='bg-[#F4F7FF] pt-32'>
+    <div id='services' className='bg-[#F4F7FF] md:pt-32 pt-2'>
       <div className='relative -top-[10rem] hidden h-[150px] w-full md:block'>
         <Image
           src='/assets/svg/line-small.svg'
