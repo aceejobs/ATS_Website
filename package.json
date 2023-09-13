@@ -18,6 +18,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "aos": "^2.3.4",
     "clsx": "^1.2.1",
     "framer-motion": "^10.6.1",
