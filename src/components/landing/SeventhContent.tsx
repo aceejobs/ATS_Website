@@ -19,13 +19,19 @@ const data = [
     bgColor: '#ccd3ff',
   },
   {
+    text: 'Salary Negotiation',
+    image: '/assets/svg/salary.svg',
+    bgColor: '#ccd3ff',
+  },
+  
+  {
     text: 'Onboarding Support',
     image: '/assets/svg/onboard.svg',
     bgColor: '#ffcfd2',
   },
   {
-    text: 'Salary Negotiation',
-    image: '/assets/svg/salary.svg',
+    text: 'Outsourcing',
+    image: '/assets/svg/end-end.svg',
     bgColor: '#ccd3ff',
   },
 ];

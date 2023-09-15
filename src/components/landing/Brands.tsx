@@ -9,7 +9,7 @@ const Brands = () => {
         <p className="text-2xl font-bold">We are trusted by our happy clients</p>
       </div>
       <div className="md:w-2/3">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
       <div>
          <Image
           src='/assets/svg/A.svg'
@@ -35,6 +35,15 @@ const Brands = () => {
           alt='image-1'
           width={200}
           height={100}
+
+        />
+         </div>
+         <div>
+         <Image
+          src='/assets/svg/beach.svg' 
+          alt='image-1'
+          width={200}
+          height={120}
 
         />
          </div>

@@ -1,20 +1,15 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
     dirs: ['src'],
   },
-
   reactStrictMode: true,
   swcMinify: true,
 
-  // Uncoment to add domain whitelist
-  // images: {
-  //   domains: [
-  //     'res.cloudinary.com',
-  //   ],
-  // },
+  // Define your custom configuration
+  publicRuntimeConfig: {
+    publicUrl: (file) => `${process.env.PUBLIC_URL}/${file}`,
+  },
 
-  // SVGR
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

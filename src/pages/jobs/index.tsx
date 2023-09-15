@@ -54,7 +54,7 @@ const JobsPage = () => {
       </div>
 
       {/* Job Listings */}
-      <div className='bg-[#F15D55]'>
+      <div className='bg-[#ED1A25]'>
       <div className="container py-12 md:py-20">
         
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>

@@ -2,7 +2,10 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { StarIcon } from '@heroicons/react/20/solid';
-
+import pic1 from "../../../public/assets/svg/test1.png"
+import pic2 from "../../../public/assets/svg/test2.png"
+// import { publicUrl } from '../../../next.config'; 
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -18,8 +21,7 @@ const testimonials = [
       ),
       name: 'Taiwo Durosinmi-Etti',
     position: 'Brand & Sales Experience',
-    image:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
+    image: pic1,
   },
   {
     id: 2,
@@ -29,8 +31,7 @@ const testimonials = [
       `Working with the ACEE team was seamless. They got my preferred choice of candidates in time for the opening of my stall. I recommend them to every organization looking to hire the best talents.`,
     position: 'Managing Partner A Jewellers',
     name: "Kunle Fakeye",
-    image:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
+    image:pic2,
   },
 ];
 
@@ -50,7 +51,7 @@ const Testimonial = () => {
             data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'} // Animation for the entire testimonial block
           >
             <p className="sr-only">{testimonial.stars} out of 5 stars</p>
-            <div className="flex gap-x-1 text-[#ed2c22] justify-center">
+            <div className="flex gap-x-1 text-[#ED1A25] justify-center">
               {Array.from({ length: testimonial.stars }, (_, i) => (
                 <StarIcon key={i} className="h-5 w-5 flex-none" aria-hidden="true" />
               ))}
@@ -64,7 +65,15 @@ const Testimonial = () => {
             data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'} // Animation for the image and caption
           >
             <figcaption className="mt-10 flex items-center gap-x-6 mb-12 justify-center">
-              <img className="h-12 w-12 rounded-full bg-gray-50" src={testimonial.image} alt="" />
+              
+            <Image
+              src={testimonial.image}
+              alt='logo'
+              width={75}
+              height={75}
+              className='h-16 w-16 rounded-full bg-gray-50'
+            />
+              {/* <img className="h-12 w-12 rounded-full bg-gray-50" src={publicUrl(testimonial.image)} alt="" /> */}
               <div className="text-sm leading-6">
                 <p className="text-base font-semibold text-gray-900">{testimonial.name}</p>
                 <p className="mt-0.5 text-gray-600">{testimonial.position}</p>

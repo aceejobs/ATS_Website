@@ -7,7 +7,7 @@ const FeaturedJob = () => {
 
   const filterJob = jobs.slice(0,8)
   return (
-    <div className='bg-[#F15D55]'>
+    <div className='bg-[#ED1A25]'>
       <div className="container py-12 md:py-20">
         <div className="flex justify-between items-center">
           <p className="text-2xl font-semibold text-white">Featured Jobs</p>
