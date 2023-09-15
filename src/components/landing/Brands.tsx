@@ -43,7 +43,8 @@ const Brands = () => {
           src='/assets/svg/beach.svg' 
           alt='image-1'
           width={200}
-          height={120}
+          height={100}
+          className="object-cover"
 
         />
          </div>

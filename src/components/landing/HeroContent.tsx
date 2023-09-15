@@ -66,15 +66,13 @@ const HeroContent = () => {
           goals.
         </p>
         <div className='mt-6 flex items-center justify-center gap-3'>
-          <div onClick={toggleModal}>
-            <Button className='h-[52px] w-[150px] '>Get Started</Button>
-          </div>
-          <Link href='/contact'>
-            <Button className='h-[52px] w-[150px] ' variant='outline'>
-              {' '}
-              Contact us
-            </Button>
-          </Link>
+        <Link  href="/jobs">
+                <Button className='h-[52px] w-[150px] ' variant='outline'>
+                  {' '}
+                  Find a Job
+                </Button>
+              </Link>
+
         </div>
         <div className='relative  h-[488px]  w-full overflow-y-auto overflow-x-hidden bg-patternMobile bg-no-repeat'>
         <div className="image-container">
