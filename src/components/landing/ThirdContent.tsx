@@ -54,9 +54,10 @@ const ThirdContent = () => {
                 </div>
 
                 <p className=' mt-1 text-gray-500'>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
-                  qui quae est, illo eum voluptatum ratione commodi at officia
-                  numquam.
+                Explore the array of possibilities available to you on our platform. 
+<br/><br/>
+              Discover how our platform can be tailored to meet your specific needs, whether it's in recruitment, employee management, payroll, or analytics. 
+
                 </p>
               </div>
               <div className='mb-8' data-aos='fade-left'>
@@ -74,8 +75,10 @@ const ThirdContent = () => {
                 </div>
                 
                 <p className=' mt-1 text-gray-500'>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Corporis in praesentium asperiores cumque ea voluptates!
+                Explore choices that best aligns with your needs and goals. Whether it's optimizing your hiring process, streamlining onboarding, or enhancing employee engagement, our platform offers a range of options. 
+<br/><br/>
+Select the solution that suits your organization's unique requirements and start reaping the benefits of a more efficient and productive workforce. Your preferred choice awaits your action.
+
                 </p>
               </div>
               <div className='mb-8' data-aos='fade-down-right'>
@@ -92,8 +95,10 @@ const ThirdContent = () => {
                 </div>
                 
                 <p className=' mt-1 text-gray-500'>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
-                  ut quod quidem distinctio, facilis reiciendis!
+                Every engagement is done on your terms. Tailor your interactions to match your organization's specific needs. 
+<br/><br/>
+We empower you to shape your experience and make decisions that align precisely with your recruitment and HR objectives. In short, leverage our platform on your terms to drive efficiency and success in your workforce management endeavors.
+
                 </p>
               </div>
             </div>
