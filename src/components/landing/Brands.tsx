@@ -6,7 +6,7 @@ const Brands = () => {
     <div className="container pt-8">
     <div className="md:flex items-center gap-6">
       <div className="md:w-1/3">
-        <p className="text-2xl font-bold">We are trusted by our happy clients</p>
+        <p className="text-4xl font-bold">Our clients</p>
       </div>
       <div className="md:w-2/3">
       <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
