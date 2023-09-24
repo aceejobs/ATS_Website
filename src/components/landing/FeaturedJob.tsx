@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 import jobs from '../../components/jobData';
 import Image from 'next/image';
+import axios from "axios";
+import { APIURL } from '@/components/services/ApiService';
 
 const FeaturedJob = () => {
-
+  const [jobs, setJobs] = useState([])
   const filterJob = jobs.slice(0,8)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get( `${APIURL}/jobs`);
+        console.log(response)
+        setJobs(response.data);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+        // Handle the error here, such as setting an error state
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
   return (
     <div className='bg-[#ED1A25]'>
       <div className="container py-12 md:py-20">
