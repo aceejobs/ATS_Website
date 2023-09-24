@@ -1,14 +1,18 @@
 import ContactSection from '@/components/landing/ContactSection';
 import Link from 'next/link';
-import React, { useState } from 'react';
-import jobs from '../../components/jobData';
+import React, { useEffect, useState } from 'react';
+// import jobs from '../../components/jobData';
+import axios from "axios";
+import { APIURL } from '@/components/services/ApiService';
 
 const JobsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
+  const [jobs, setJobs] = useState([])
   const jobsPerPage = 9;
 
-  const filteredJobs = jobs.filter((job) =>
+
+  const filteredJobs = jobs.filter((job:any) =>
     job.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -30,6 +34,21 @@ const JobsPage = () => {
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
   const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get( `${APIURL}/jobs`);
+        console.log(response)
+        setJobs(response.data);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+        // Handle the error here, such as setting an error state
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
   return (
     <div>
       {/* Hero Section */}
@@ -57,6 +76,7 @@ const JobsPage = () => {
       <div className='bg-[#ED1A25]'>
       <div className="container py-12 md:py-20">
         
+       {jobs ? 
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>
         {currentJobs.map((job: any) => (
           <div
@@ -88,6 +108,9 @@ const JobsPage = () => {
           </div>
         ))}
         </div>
+        : 
+        <p className='text-2xl text-white font-semibold text-center'>No Jobs at the moment</p>
+      }
       </div>
     </div>
 
