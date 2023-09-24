@@ -12,13 +12,10 @@ const testimonials = [
     id: 1,
     stars: 5,
     Title: "Exceptional Service and Job Placement",
-      quote: (
-        <>
-          The team at ACEE Careers truly understands the job market and what candidates like me are on the lookout for. They took the time to assess my skills, interests, and career goals, and then matched me with the perfect job that not only aligns with my aspirations but also offers an attractive compensation package.
-          <br /><br />
-          What stood out to me was their commitment to transparency and communication. Throughout the entire process, I was kept informed about job openings, interview schedules, and feedback from potential employers. This level of communication made me feel valued and reassured.
-        </>
-      ),
+      quote:
+      `
+      The team at ACEE Careers truly understands the job market and what candidates like me are on the lookout for. They took the time to assess my skills, interests, and career goals, and then matched me with the perfect job that not only aligns with my aspirations but also offers an attractive compensation package.
+      `  ,
       name: 'Taiwo Durosinmi-Etti',
     position: 'Brand & Sales Experience',
     image: pic1,
