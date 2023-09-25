@@ -55,7 +55,7 @@ const FeaturedJob = () => {
             
             {/* <p className='mb-6 mt-2'>{job.description}</p> */}
             <Link
-              href={`/jobs/${job.id}`}
+              href={`/jobs/${job._id}`}
               className='mt-6 rounded-lg font-semibold text-sm px-2 py-2 text-white hover:bg-blue-700'
             >
               Apply Now

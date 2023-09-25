@@ -1,18 +1,19 @@
 import ContactSection from '@/components/landing/ContactSection';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-// import jobs from '../../components/jobData';
-import axios from "axios";
 import { APIURL } from '@/components/services/ApiService';
+import { useFetchData } from '@/hooks/UseFetchData';
 
 const JobsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [jobs, setJobs] = useState([])
+  // const [jobs, setJobs] = useState([])
   const jobsPerPage = 9;
 
+  const url = `${APIURL}/jobs`
+  const { error, loading, data } = useFetchData(url);
 
-  const filteredJobs = jobs.filter((job:any) =>
+  const filteredJobs = data.filter((job:any) =>
     job.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -34,22 +35,7 @@ const JobsPage = () => {
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
   const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get( `${APIURL}/jobs`);
-        const myData = response.data.data
-        console.log(myData)
-        setJobs(myData);
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
-        // Handle the error here, such as setting an error state
-      }
-    };
-  
-    fetchData();
-  }, []);
-  
+
   return (
     <div>
       {/* Hero Section */}
@@ -77,7 +63,7 @@ const JobsPage = () => {
       <div className='bg-[#ED1A25]'>
       <div className="container py-12 md:py-20">
         
-       {jobs ? 
+       {data ? 
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>
         {currentJobs.map((job: any) => (
           <div
@@ -101,7 +87,7 @@ const JobsPage = () => {
 
             {/* <p className='mb-6 mt-2'>{job.description}</p> */}
             <Link
-              href={`/jobs/${job.id}`}
+              href={`/jobs/${job._id}`}
               className='mt-6 rounded-lg font-semibold text-sm px-2 py-2 text-white hover:bg-blue-700'
             >
               Apply Now

@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import jobs from '../../components/jobData';
+// import jobs from '../../components/jobData';
 import ContactSection from '@/components/landing/ContactSection';
+import { APIURL } from '@/components/services/ApiService';
+import { useFetchId } from '@/hooks/UseFetchId';
+import axios from 'axios';
 
 const JobDetailsPage = () => {
+  const [data, setData] = useState([]); // Use the specified type
+  const [error, setError] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,14 +19,28 @@ const JobDetailsPage = () => {
   });
 
   const router = useRouter();
-  const { jobId } = router.query; // Retrieve job ID from the URL query params
-  const { id } = router.query; // Get the job ID from the URL query
+  const { id } = router.query;
 
-  const job = jobs.find((job: any) => job.id === Number(id));
+  useEffect(() => {
+    if (id) {
+      const url = `${APIURL}/jobs/${id}`;
+      setLoading(true);
+      setError('');
 
-  if (!job) {
-    return <div>Job not found</div>;
-  }
+      axios
+        .get(url)
+        .then((response) => {
+          const myData = response.data.data
+          console.log(myData)
+          setData(myData); // Set the fetched data
+          setLoading(false);
+        })
+        .catch((error) => {
+          setError('An error occurred while fetching data.');
+          setLoading(false);
+        });
+    }
+  }, [id]);
 
   const handleFormChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -58,6 +78,17 @@ const JobDetailsPage = () => {
 
     // You can also add a success message or redirect the user to a confirmation page
   };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!data) {
+    return <div>Job not found</div>;
+  }
 
   return (
     <div>
@@ -73,26 +104,44 @@ const JobDetailsPage = () => {
       <div className='container mx-auto mt-8'>
         <div className='grid md:grid-cols-2'>
           <div>
-            <h2 className='mt-8 text-2xl font-semibold'>{job.title}</h2>
-            <p className='text-gray-600'>{job.company}</p>
-            <p className='text-gray-600'>{job.location}</p>
+            <h2 className='mt-8 text-2xl font-semibold'>{data?  (data as any).title : ""}</h2>
+            <p className='text-gray-600'>Company: { data?  (data as any).company : ""}</p>
+            <p className='text-gray-600'>Location: {data?  (data as any).location : ""}</p>
+            <p className='text-gray-600'>Job Type: {data?  (data as any).jobType : ""}</p>
+            <p className='text-gray-600'>Salary: {data?  (data as any).salary : ""}</p>
+            
             <p className='mb-1 mt-4 text-xl font-bold'>Description</p>
-            <p className='mb-4 text-gray-800'>{job.description}</p>
+            <p className='mb-4 text-gray-800'>{ data?  (data as any).description : ""}</p>
             <p className='mb-1 mt-4 text-xl font-bold'>Requirements</p>
             <ul className='list-disc pl-3'>
-              {job.requirements.map((requirement, index) => (
-                <li className='text-gray-800' key={index}>
-                  {requirement}
+              {/* {data.qualifications.map((qualification, index) => ( */}
+                <li className='text-gray-800'>
+                  {data?  (data as any).requirement : ""}
+                  
                 </li>
-              ))}
+                <li className='text-gray-800'>
+                  {data?  (data as any).experience : ""}
+                  
+                </li>
+              {/* ))} */}
+            </ul>
+            <p className='mb-1 mt-4 text-xl font-bold'>Responsibility</p>
+            <ul className='list-disc pl-3'>
+              {/* {data.qualifications.map((qualification, index) => ( */}
+                <li className='text-gray-800'>
+                  {data?  (data as any).responsibility : ""}
+                  
+                </li>
+              {/* ))} */}
             </ul>
             <p className='mb-1 mt-4 text-xl font-bold'>Qualifications</p>
             <ul className='list-disc pl-3'>
-              {job.qualifications.map((qualification, index) => (
-                <li className='text-gray-800' key={index}>
-                  {qualification}
+              {/* {data.qualifications.map((qualification, index) => ( */}
+                <li className='text-gray-800'>
+                  {data?  (data as any).qualification : ""}
+                  
                 </li>
-              ))}
+              {/* ))} */}
             </ul>
           </div>
           <div>
