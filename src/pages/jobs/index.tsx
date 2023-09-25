@@ -38,8 +38,9 @@ const JobsPage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get( `${APIURL}/jobs`);
-        console.log(response)
-        setJobs(response.data);
+        const myData = response.data.data
+        console.log(myData)
+        setJobs(myData);
       } catch (error) {
         console.error("Error fetching jobs:", error);
         // Handle the error here, such as setting an error state
@@ -148,9 +149,7 @@ const JobsPage = () => {
           )}
         </ul>
       </div>
-      {/* <div className='bg-[#F4F7FF]'>
-        <ContactSection />
-      </div> */}
+  
     </div>
   );
 };
