@@ -9,8 +9,8 @@ const Brands = () => {
         <p className="text-4xl font-bold">Our clients</p>
       </div>
       <div className="md:w-2/3">
-      <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
-      <div>
+      <div className="grid md:grid-cols-3 grid-cols-2 gap-4">
+      {/* <div>
          <Image
           src='/assets/svg/A.svg'
           alt='image-1'
@@ -18,10 +18,19 @@ const Brands = () => {
           height={100}
 
         />
-         </div>
-         <div>
+         </div> */}
+           <div className='relative aspect-w-2 aspect-h-1'>
          <Image
-          src='/assets/svg/landmark.svg'
+          src='/assets/svg/12.jpeg'
+          alt='image-1'
+          width={200}
+          height={100}
+
+        />
+         </div>
+         <div className='relative aspect-w-2 aspect-h-1'>
+         <Image
+          src='/assets/svg/landmark.jpeg'
           alt='image-1'
           width={200}
           height={100}
@@ -29,18 +38,10 @@ const Brands = () => {
         />
          </div>
          
-         <div>
+       
+         <div className='relative aspect-w-2 aspect-h-1'>
          <Image
-          src='/assets/svg/12.svg'
-          alt='image-1'
-          width={200}
-          height={100}
-
-        />
-         </div>
-         <div>
-         <Image
-          src='/assets/svg/beach.svg' 
+          src='/assets/svg/goodbeach.jpeg' 
           alt='image-1'
           width={200}
           height={100}

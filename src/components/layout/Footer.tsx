@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 import Link from 'next/link';
+import { FaPhone, FaEnvelope, FaMapMarker } from 'react-icons/fa';
 
 const Footer = () => {
 
@@ -20,7 +21,7 @@ const Footer = () => {
   return (
     <>
     <div className="bg-white py-8 md:py-12 mt-10">
-      <div className="container text-center md:w-1/2 mx-auto">
+      <div className="container text-center md:w-1/2 mx-auto"> 
         <p className="text-3xl font-semibold mb-6">Subscribe Newsletter</p>
         <div className="">
                 <p className='text-xl mb-3 text-gray-500'>Find your next great opportunity!</p>
@@ -54,7 +55,7 @@ const Footer = () => {
               height={150}
               className='object-contain '
             />
-            <p className='text-lg font-medium'>Where talent meet opportunity</p>
+            <p className='text-lg font-medium'>Where talents meet opportunity</p>
 
             <div className='flex  gap-2 lg:gap-6 mt-4'>
             <a
@@ -95,7 +96,7 @@ const Footer = () => {
             </a>
           </div>
           </div>
-          <div className="md:w-[65%]">
+          <div className="md:w-[65%] mt-4 md:mt-0">
             <div className="grid md:grid-cols-3 grid-cols-2 gap-6">
             <div>
             <p className='mb-2 text-lg font-semibold'>Quick Links</p>
@@ -123,23 +124,29 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <p className='mb-2 text-lg font-semibold'>Contact</p>
-            <ul className='text-gray-500'>
-              <li className='mb-1'>
-                <a href='tel:+2348165821749'>+2348165821749</a>
-              </li>
-              <li className='mb-1'>
-                <a href='mailto:info@aceejobs.com'>info@aceejobs.com</a>
-              </li>
-              <li className='mb-2'>
-                <a href='mailto:careers@aceejobs.com'>careers@aceejobs.com</a>
-              </li>
-              <li className='mb-1'>
-                
-                <span className='text-gray-600 text-[15px]'>Mulliner Towers, 39 Alfred Rewane Road Lagos 101233.</span>
-              </li>
-            </ul>
-          </div>
+  <p className='mb-2 text-lg font-semibold'>Contact</p>
+  <ul className='text-gray-500'>
+    <li className='mb-1'>
+      <FaPhone className='inline-block mr-2' />
+      <a href='tel:+2348165821749'>+2348165821749</a>
+    </li>
+    <li className='mb-1'>
+      <FaEnvelope className='inline-block mr-2' />
+      <a href='mailto:info@aceejobs.com'>info@aceejobs.com</a>
+    </li>
+    <li className='mb-2'>
+      <FaEnvelope className='inline-block mr-2' />
+      <a href='mailto:careers@aceejobs.com'>careers@aceejobs.com</a>
+    </li>
+    <li className='mb-1'>
+      <FaMapMarker className='inline-block mr-2' />
+      <span className='text-gray-500 text-sm'>
+        Mulliner Towers, 39 Alfred Rewane Road Lagos 101233.
+      </span>
+    </li>
+  </ul>
+</div>
+
             </div>
           </div>
           

@@ -1,7 +1,8 @@
 import ContactSection from '@/components/landing/ContactSection';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { APIURL } from '@/components/services/ApiService';
+import { baseURL } from '../../constant/constants';
+
 import { useFetchData } from '@/hooks/UseFetchData';
 
 const JobsPage = () => {
@@ -10,7 +11,7 @@ const JobsPage = () => {
   // const [jobs, setJobs] = useState([])
   const jobsPerPage = 9;
 
-  const url = `${APIURL}/jobs`
+  const url = `${baseURL}/jobs`
   const { error, loading, data } = useFetchData(url);
 
   const filteredJobs = data.filter((job:any) =>
@@ -60,25 +61,28 @@ const JobsPage = () => {
       </div>
 
       {/* Job Listings */}
-      <div className='bg-[#ED1A25]'>
+      <div className='bg-[#F4F7FF]'>
       <div className="container py-12 md:py-20">
         
        {data ? 
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>
         {currentJobs.map((job: any) => (
+         
           <div
           key={job.id}
-          className='rounded-xl bg-[#FFFFFF0F] p-2 shadow-md transition duration-300 hover:shadow-xl md:p-6 text-white hover:border'
+          className='rounded-xl bg-[#fff] p-2 shadow-md transition duration-300 hover:shadow-xl md:p-6 text-white hover:border'
           data-aos={job.id % 2 === 0 ? 'fade-left' : 'fade-right'}
           data-aos-duration="1000" // Set animation duration (in milliseconds)
           data-aos-delay="200" // Set animation delay (in milliseconds)
         >
-
+            <Link
+              href={`/jobs/${job._id}`}
+            >
             <div className="md:h-[75%]">
-            <h3 className='text-xl font-semibold'>{job.title}</h3>
-            <p className='text-gray-300'>{job.company}</p>
-            <p className='text-gray-300'>{job.location}</p>
-            <p className='mb-6 mt-2'>
+            <h3 className='text-xl text-[#111111] font-semibold'>{job.title}</h3>
+            <p className='text-gray-700'>{job.company}</p>
+            <p className='text-gray-700'>{job.location}</p>
+            <p className='mb-6 mt-2 text-gray-600'>
               {job.description.length > 200
                 ? `${job.description.substring(0, 75)}...`
                 : job.description}
@@ -88,11 +92,13 @@ const JobsPage = () => {
             {/* <p className='mb-6 mt-2'>{job.description}</p> */}
             <Link
               href={`/jobs/${job._id}`}
-              className='mt-6 rounded-lg font-semibold text-sm px-2 py-2 text-white hover:bg-blue-700'
+              className='mt-6 rounded-lg font-semibold text-sm px-2 bg-blue-700 py-2 text-white hover:bg-blue-500'
             >
               Apply Now
             </Link>
+            </Link>
           </div>
+          
         ))}
         </div>
         : 

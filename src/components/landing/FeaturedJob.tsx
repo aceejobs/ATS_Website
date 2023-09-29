@@ -3,7 +3,7 @@ import Link from 'next/link';
 import jobs from '../../components/jobData';
 import Image from 'next/image';
 import axios from "axios";
-import { APIURL } from '@/components/services/ApiService';
+import { baseURL } from '../../constant/constants';
 
 const FeaturedJob = () => {
   const [jobs, setJobs] = useState([])
@@ -12,7 +12,7 @@ const FeaturedJob = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get( `${APIURL}/jobs`);
+        const response = await axios.get( `${baseURL}/jobs`);
         const myData = response.data.data
         console.log(myData)
         setJobs(myData);
@@ -42,6 +42,9 @@ const FeaturedJob = () => {
           data-aos-duration="1000" // Set animation duration (in milliseconds)
           data-aos-delay="200" // Set animation delay (in milliseconds)
         >
+          <Link
+              href={`/jobs/${job._id}`}
+            >
             <Image
               src='/assets/svg/phon.jpg'
               alt='logo'
@@ -59,6 +62,7 @@ const FeaturedJob = () => {
               className='mt-6 rounded-lg font-semibold text-sm px-2 py-2 text-white hover:bg-blue-700'
             >
               Apply Now
+            </Link>
             </Link>
           </div>
         ))}

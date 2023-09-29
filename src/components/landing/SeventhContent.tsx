@@ -3,34 +3,35 @@ import Image from 'next/image';
 import React from 'react';
 
 const data = [
+
   {
     text: 'End-to-End Recruitment',
     image: '/assets/svg/end-end.svg',
     bgColor: '#ccd3ff',
   },
   {
-    text: 'Resume Writing',
+    text: 'HR support',
     image: '/assets/svg/writing.svg',
     bgColor: '#ffcfd2',
   },
   {
-    text: 'Interview Coaching',
+    text: 'Training',
     image: '/assets/svg/interview.svg',
     bgColor: '#ccd3ff',
   },
   {
-    text: 'Salary Negotiation',
+    text: 'Business Advisory',
     image: '/assets/svg/salary.svg',
     bgColor: '#ccd3ff',
   },
   
   {
-    text: 'Onboarding Support',
+    text: 'Workforce planning & Consulting',
     image: '/assets/svg/onboard.svg',
     bgColor: '#ffcfd2',
   },
   {
-    text: 'Outsourcing',
+    text: 'HR Outsourcing ',
     image: '/assets/svg/end-end.svg',
     bgColor: '#ccd3ff',
   },

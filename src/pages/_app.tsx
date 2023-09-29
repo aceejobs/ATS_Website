@@ -6,6 +6,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // Initialize AOS
@@ -19,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
     <AnyComponent {...pageProps} />;
+    <ToastContainer />
     </Layout>
   );
 }

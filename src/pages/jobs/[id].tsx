@@ -2,36 +2,39 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 // import jobs from '../../components/jobData';
 import ContactSection from '@/components/landing/ContactSection';
-import { APIURL } from '@/components/services/ApiService';
+import { baseURL } from '../../constant/constants';
+
 import { useFetchId } from '@/hooks/UseFetchId';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const JobDetailsPage = () => {
   const [data, setData] = useState([]); // Use the specified type
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
-    phoneNumber: '',
+    phone: '',
     coverLetter: '',
     cv: null as File | null,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
     if (id) {
-      const url = `${APIURL}/jobs/${id}`;
+      const url = `${baseURL}/jobs/${id}`;
       setLoading(true);
       setError('');
 
       axios
         .get(url)
         .then((response) => {
-          const myData = response.data.data
-          console.log(myData)
+          const myData = response.data.data;
+          console.log(myData);
           setData(myData); // Set the fetched data
           setLoading(false);
         })
@@ -62,22 +65,67 @@ const JobDetailsPage = () => {
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Implement your logic to handle form submission (e.g., sending an email)
+    setIsSubmitting(true); // Start the loading state
 
-    // Reset the form fields after submission
-    setFormData({
-      name: '',
-      email: '',
-      phoneNumber: '',
-      coverLetter: '',
-      cv: null,
-    });
+    // Create a FormData object to send the form data as multipart/form-data
+    const formDataToSend = new FormData();
+    formDataToSend.append('fullName', formData.fullName);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('coverLeter', formData.coverLetter);
 
-    // You can also add a success message or redirect the user to a confirmation page
+    // Check if id is available and is of type string
+    // if (id && typeof id === 'string') {
+    //   formDataToSend.append('jobId', id);
+    // }
+    // Conditionally append the cv field if it's not null
+    if (formData.cv) {
+      formDataToSend.append('cv', formData.cv);
+    }
+
+    try {
+      // Send a POST request to the application endpoint
+      const response = await axios.post(
+        `${baseURL}/jobs/apply`,
+        formDataToSend
+      );
+
+      // Check if the application was successful
+      if (response.status === 200) {
+        // Reset the form fields after successful submission
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          coverLetter: '',
+          cv: null as File | null,
+
+        });
+
+        // Show a success toast
+        toast.success('Application submitted successfully!', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      } else {
+        // Show an error toast if the request was not successful
+        toast.error('Something went wrong, Please try again later', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      }
+    } catch (error: any) {
+      console.log(error.response.data.error);
+      // Show an error toast if there was an exception
+      toast.error(error.response.data.error, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    } finally {
+      setIsSubmitting(false); // Stop the loading state after API call
+    }
   };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -104,43 +152,51 @@ const JobDetailsPage = () => {
       <div className='container mx-auto mt-8'>
         <div className='grid md:grid-cols-2'>
           <div>
-            <h2 className='mt-8 text-2xl font-semibold'>{data?  (data as any).title : ""}</h2>
-            <p className='text-gray-600'>Company: { data?  (data as any).company : ""}</p>
-            <p className='text-gray-600'>Location: {data?  (data as any).location : ""}</p>
-            <p className='text-gray-600'>Job Type: {data?  (data as any).jobType : ""}</p>
-            <p className='text-gray-600'>Salary: {data?  (data as any).salary : ""}</p>
-            
+            <h2 className='mt-8 text-2xl font-semibold'>
+              {data ? (data as any).title : ''}
+            </h2>
+            <p className='text-gray-600'>
+              Company: {data ? (data as any).company : ''}
+            </p>
+            <p className='text-gray-600'>
+              Location: {data ? (data as any).location : ''}
+            </p>
+            <p className='text-gray-600'>
+              Job Type: {data ? (data as any).jobType : ''}
+            </p>
+            <p className='text-gray-600'>
+              Salary: {data ? (data as any).salary : ''}
+            </p>
+
             <p className='mb-1 mt-4 text-xl font-bold'>Description</p>
-            <p className='mb-4 text-gray-800'>{ data?  (data as any).description : ""}</p>
+            <p className='mb-4 text-gray-800'>
+              {data ? (data as any).description : ''}
+            </p>
             <p className='mb-1 mt-4 text-xl font-bold'>Requirements</p>
             <ul className='list-disc pl-3'>
               {/* {data.qualifications.map((qualification, index) => ( */}
-                <li className='text-gray-800'>
-                  {data?  (data as any).requirement : ""}
-                  
-                </li>
-                <li className='text-gray-800'>
-                  {data?  (data as any).experience : ""}
-                  
-                </li>
+              <li className='text-gray-800'>
+                {data ? (data as any).requirement : ''}
+              </li>
+              <li className='text-gray-800'>
+                {data ? (data as any).experience : ''}
+              </li>
               {/* ))} */}
             </ul>
             <p className='mb-1 mt-4 text-xl font-bold'>Responsibility</p>
             <ul className='list-disc pl-3'>
               {/* {data.qualifications.map((qualification, index) => ( */}
-                <li className='text-gray-800'>
-                  {data?  (data as any).responsibility : ""}
-                  
-                </li>
+              <li className='text-gray-800'>
+                {data ? (data as any).responsibility : ''}
+              </li>
               {/* ))} */}
             </ul>
             <p className='mb-1 mt-4 text-xl font-bold'>Qualifications</p>
             <ul className='list-disc pl-3'>
               {/* {data.qualifications.map((qualification, index) => ( */}
-                <li className='text-gray-800'>
-                  {data?  (data as any).qualification : ""}
-                  
-                </li>
+              <li className='text-gray-800'>
+                {data ? (data as any).qualification : ''}
+              </li>
               {/* ))} */}
             </ul>
           </div>
@@ -153,10 +209,10 @@ const JobDetailsPage = () => {
                   <label className='block text-gray-700'>Your Name</label>
                   <input
                     type='text'
-                    name='name'
+                    name='fullName'
                     placeholder='John Doe'
                     className='my-input'
-                    value={formData.name}
+                    value={formData.fullName}
                     onChange={handleFormChange}
                     required
                   />
@@ -177,10 +233,10 @@ const JobDetailsPage = () => {
                   <label className='block text-gray-700'>Phone Number</label>
                   <input
                     type='tel'
-                    name='phoneNumber'
+                    name='phone'
                     placeholder='555-555-5555'
                     className='my-input'
-                    value={formData.phoneNumber}
+                    value={formData.phone}
                     onChange={handleFormChange}
                     required
                   />
@@ -210,8 +266,9 @@ const JobDetailsPage = () => {
                   <button
                     type='submit'
                     className='rounded-lg bg-ace-blue px-4 py-2 text-white hover:bg-blue-700'
+                    disabled={isSubmitting} // Disable the button while submitting
                   >
-                    Apply Now
+                    {isSubmitting ? 'Loading...' : 'Apply Now'}
                   </button>
                 </div>
               </form>
